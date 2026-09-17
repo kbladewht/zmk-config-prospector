@@ -35,3 +35,4 @@ BOOT_FIX_ATTEMPTS.md
 
 # Any extra build dirs (build-touch/, build-<test>/) - never commit build output
 build-*/
+/.cache
