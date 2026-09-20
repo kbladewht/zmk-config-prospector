@@ -9,12 +9,36 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+/*
+ * Layer names: ZMK sends zmk_keymap_layer_name() to the scanner over the status
+ * advertisement, but that field is only 4 bytes wide
+ * (struct zmk_status_adv_data.layer_name[4]), so display-name must stay at
+ * <= 4 characters to appear in full on the scanner display.
+ * NOTE: the scanner shows the *keyboard's* layer names - these local names are
+ * only used when this scanner build itself reports its layers.
+ */
 / {
     keymap {
         compatible = "zmk,keymap";
         display-name = "Base";
         // Default layer - scanner has no physical keys
         default_layer {
+            display-name = "Base";
+            bindings = <&none>;
+        };
+
+        keymap_layer {
+            display-name = "Keym";
+            bindings = <&none>;
+        };
+
+        mouse_layer {
+            display-name = "Mous";
+            bindings = <&none>;
+        };
+
+        setting_layer {
+            display-name = "Sett";
             bindings = <&none>;
         };
     };

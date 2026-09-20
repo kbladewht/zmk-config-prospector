@@ -47,7 +47,7 @@ Total: 10 signal pins + VCC/GND
 - ✅ **Display Settings**: Adjust brightness, max layers, slide mode
 - ✅ **Keyboard List**: View detected keyboards with channel filter
 - ✅ **Quick Actions**: Bootloader/Reset + firmware version display
-- ✅ **Prospector Display**: Cycle through Field, Operator, Radii layouts
+- ✅ **Prospector Display**: Cycle through Field, Operator, Radii, YADS2 layouts
 
 ---
 
@@ -168,7 +168,7 @@ The main screen is **identical to non-touch mode**. See [README - Display Featur
 - **DOWN Swipe**: Open Display Settings
 - **UP Swipe**: Open Keyboard List
 - **RIGHT Swipe**: Open Quick Actions
-- **LEFT Swipe**: Open Prospector Display (Field / Operator / Radii layouts)
+- **LEFT Swipe**: Open Prospector Display (Field / Operator / Radii / YADS2 layouts)
 
 ---
 
@@ -280,11 +280,13 @@ Alternative display layouts showing keyboard status in different visual styles:
 - **Field**: Animated line segments driven by WPM
 - **Operator**: Minimalist with dot indicators and arc/bar battery display
 - **Radii**: Circular wheel indicator
+- **YADS2**: YADS-style screen — left/right half connection status in the top corners (left = left hand, right = right hand), keyboard name, output status (USB / BLE), large centred layer name, NerdFont modifier icons and battery level per half along the bottom edge (WPM is not shown)
 
 #### Gestures from Prospector Display
 
 - **RIGHT Swipe**: Return to main screen
-- **UP/DOWN Swipe**: Cycle through layouts (Field → Operator → Radii → Field)
+- **UP/DOWN Swipe**: Cycle through layouts (Field → Operator → Radii → YADS2 → Field)
+- **DOUBLE TAP**: Cycle the colour palette of the active layout (Field / Operator / Radii)
 
 ---
 
