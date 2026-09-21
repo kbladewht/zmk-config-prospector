@@ -3,7 +3,7 @@ include:
   # Scanner - Non-Touch Mode (display only, no swipe navigation)
   - board: kblade//zmk
     shield: prospector_scanner
-    artifact-name: prospector_scanner
+    artifact-name: prospector_dongle
 
   # # Settings reset utility
   # - board: kblade//zmk
