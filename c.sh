@@ -4,14 +4,8 @@ export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 export ZEPHYR_SDK_INSTALL_DIR="D:/zephyr-sdk-0.16.9"
 
-# Isolate this workspace from other Zephyr checkouts (e.g. QMK-on-zephyr) and
-# select the Zephyr SDK toolchain explicitly. Without ZEPHYR_TOOLCHAIN_VARIANT
-# the search in FindZephyr-sdk.cmake dies with:
-#   CMake Error at zephyr/cmake/modules/FindZephyr-sdk.cmake:57 (if):
-#     if given arguments: "(" "zephyr" "STREQUAL" ")" ... Unknown arguments specified
 unset ZEPHYR_BASE
 unset Zephyr_DIR
-export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 . ./common.sh
 
@@ -32,6 +26,11 @@ west build -p always -s zmk/app -b xiao_ble//zmk -- \
 SRC_FILE="build/zephyr/zmk.uf2"
 # Generate filename with keyword, e.g., flash_left.uf2, flash_right.uf2, flash_dongle.uf2
 DEST_FILE="${DRIVE_P}:/flash${FILE_SUFFIX}.uf2"
+
+cp "build/zephyr/zmk.uf2" "/c/Users/dellht/Downloads/receiver_prospector_$(date +%H%M%S).uf2"
+echo "Copy the uf2 file to /c/Users/dellht/Downloads/receiver_prospector_$(date +%H%M%S).uf2"
+SRC_FILE="build/zephyr/zmk.uf2"
+
 polling_check
 echo "Copying $SRC_FILE to $DEST_FILE"
 cp "$SRC_FILE" "$DEST_FILE"
