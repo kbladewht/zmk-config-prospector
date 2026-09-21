@@ -5,6 +5,6 @@ include:
     shield: prospector_scanner
     artifact-name: prospector_scanner
 
-  # Settings reset utility
-  - board: kblade//zmk
-    shield: settings_reset
+  # # Settings reset utility
+  # - board: kblade//zmk
+  #   shield: settings_reset

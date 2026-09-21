@@ -13,7 +13,6 @@ export ZEPHYR_SDK_INSTALL_DIR="D:/zephyr-sdk-0.16.9"
 DRIVE_P=E
 # cd app
 rm -rf build
-rm -rf app/build
 
 # sleep 2
 
