@@ -1,10 +1,10 @@
 ---
 include:
   # Scanner - Non-Touch Mode (display only, no swipe navigation)
-  - board: xiao_ble//zmk
+  - board: kblade//zmk
     shield: prospector_scanner
     artifact-name: prospector_scanner
 
   # Settings reset utility
-  - board: xiao_ble//zmk
+  - board: kblade//zmk
     shield: settings_reset

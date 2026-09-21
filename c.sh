@@ -1,11 +1,12 @@
 export PATH="/c/Users/dellht/AppData/Local/Programs/Python/Python314/Scripts:$PATH"
 export PATH="/c/Users/dellht/AppData/Local/Programs/Python/Python314:$PATH"
+export ZEPHYR_BASE="D:/project/GitHub/zmk-config-prospector/zephyr"
+export Zephyr_DIR="D:/project/GitHub/zmk-config-prospector/zephyr/share/zephyr-package/cmake"
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 export ZEPHYR_SDK_INSTALL_DIR="D:/zephyr-sdk-0.16.9"
 
-unset ZEPHYR_BASE
-unset Zephyr_DIR
+
 
 . ./common.sh
 
@@ -16,7 +17,7 @@ rm -rf app/build
 
 # sleep 2
 
-west build -p always -s zmk/app -b xiao_ble//zmk -- \
+west build -p always -s zmk/app -b kblade//zmk -- \
 -DZMK_CONFIG="D:/project/GitHub/zmk-config-prospector/config" \
 -DSHIELD=prospector_scanner \
 -DEXTRA_CONF_FILE="D:/project/GitHub/zmk-config-prospector/config/prospector_scanner.conf"; 
