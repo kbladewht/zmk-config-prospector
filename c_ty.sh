@@ -32,7 +32,7 @@ west build -p always -s zmk/app -b xiao_ble//zmk -- \
 
 SRC_FILE="build/zephyr/zmk.uf2"
 # Generate filename with keyword, e.g., flash_left.uf2, flash_right.uf2, flash_dongle.uf2
-DEST_FILE="${FIRMWARE_DIR}/prospector_scanner_$(date +%H%M%S).uf2"
+DEST_FILE="${FIRMWARE_DIR}/receiver_prospector_$(date +%H%M%S).uf2"
 # polling_check
 echo "Copying $SRC_FILE to $DEST_FILE"
 cp "$SRC_FILE" "$DEST_FILE"
