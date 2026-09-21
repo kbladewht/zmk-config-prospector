@@ -10,12 +10,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 /*
- * Layer names: ZMK sends zmk_keymap_layer_name() to the scanner over the status
- * advertisement, but that field is only 4 bytes wide
- * (struct zmk_status_adv_data.layer_name[4]), so display-name must stay at
- * <= 4 characters to appear in full on the scanner display.
- * NOTE: the scanner shows the *keyboard's* layer names - these local names are
- * only used when this scanner build itself reports its layers.
+ * Layer names are read locally by the YADS2 layout through ZMK's
+ * zmk_keymap_layer_name(), so full display-names can be used here.
+ * (Only layouts that show the name *received over the status advertisement* are
+ * limited to 4 characters - struct zmk_status_adv_data.layer_name[4].)
  */
 / {
     keymap {
@@ -28,17 +26,17 @@
         };
 
         keymap_layer {
-            display-name = "Keym";
+            display-name = "Keymap";
             bindings = <&none>;
         };
 
         mouse_layer {
-            display-name = "Mous";
+            display-name = "Mouse";
             bindings = <&none>;
         };
 
         setting_layer {
-            display-name = "Sett";
+            display-name = "Setting";
             bindings = <&none>;
         };
     };
