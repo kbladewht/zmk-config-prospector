@@ -16,13 +16,14 @@ export ZEPHYR_SDK_INSTALL_DIR="D:/zephyr-sdk-0.16.9"
 DRIVE_P=E
 # cd app
 rm -rf build
-
+# -DZMK_EXTRA_MODULES="$SCRIPT_DIR/modules/prospector-zmk-module"
 # sleep 2
 
 west build -p always -s zmk/app -b kblade//zmk -- \
 -DZMK_CONFIG="$SCRIPT_DIR/config" \
 -DSHIELD=prospector_scanner \
--DEXTRA_CONF_FILE="$SCRIPT_DIR/config/prospector_scanner.conf"; 
+-DZMK_EXTRA_MODULES="$SCRIPT_DIR/modules/prospector-zmk-module" \
+-DEXTRA_CONF_FILE="$SCRIPT_DIR/config/prospector_scanner.conf"
 
       
 SRC_FILE="build/zephyr/zmk.uf2"
