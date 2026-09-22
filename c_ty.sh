@@ -2,13 +2,10 @@ export PATH="/c/Users/TommyYu/AppData/Roaming/Python/Python314/Scripts:$PATH"
 
 export ZEPHYR_SDK_INSTALL_DIR="D:/zephyr-sdk-0.16.9"
 
-# Isolate this workspace from other Zephyr checkouts (e.g. QMK-on-zephyr) and
-# select the Zephyr SDK toolchain explicitly. Without ZEPHYR_TOOLCHAIN_VARIANT
-# the search in FindZephyr-sdk.cmake dies with:
-#   CMake Error at zephyr/cmake/modules/FindZephyr-sdk.cmake:57 (if):
-#     if given arguments: "(" "zephyr" "STREQUAL" ")" ... Unknown arguments specified
-unset ZEPHYR_BASE
-unset Zephyr_DIR
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+export ZEPHYR_BASE="$SCRIPT_DIR/zephyr"
+export Zephyr_DIR="$SCRIPT_DIR/zephyr/share/zephyr-package/cmake"
 export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
 
 # Make clean
@@ -16,17 +13,18 @@ export ORIG_CWD=$(pwd)
 . ./common.sh
 
 FIRMWARE_DIR="/d/Keyboard_firmware"
-
+# -DZMK_EXTRA_MODULES="$SCRIPT_DIR/modules/prospector-zmk-module" \
 # cd app
 rm -rf build
-rm -rf app/build
+
 
 # sleep 2
 
-west build -p always -s zmk/app -b xiao_ble//zmk -- \
--DZMK_CONFIG="D:/project/GitHub/zmk-config-prospector/config" \
+west build -p always -s zmk/app -b kblade//zmk -- \
+-DZMK_CONFIG="$SCRIPT_DIR/config" \
 -DSHIELD=prospector_scanner \
--DEXTRA_CONF_FILE="F:\Codes\Others\zmk-config-prospector\config\prospector_scanner.conf"; 
+-DZMK_EXTRA_MODULES="$SCRIPT_DIR/modules/prospector-zmk-module" \
+-DEXTRA_CONF_FILE="$SCRIPT_DIR/config/prospector_scanner.conf"; 
 
       
 

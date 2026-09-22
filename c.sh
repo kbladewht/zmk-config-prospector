@@ -22,7 +22,6 @@ rm -rf build
 west build -p always -s zmk/app -b kblade//zmk -- \
 -DZMK_CONFIG="$SCRIPT_DIR/config" \
 -DSHIELD=prospector_scanner \
--DZMK_EXTRA_MODULES="$SCRIPT_DIR/modules/prospector-zmk-module" \
 -DEXTRA_CONF_FILE="$SCRIPT_DIR/config/prospector_scanner.conf"
 
       
