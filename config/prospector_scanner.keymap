@@ -18,7 +18,7 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-        display-name = "Base";
+        display-name = "Base2";
         // Default layer - scanner has no physical keys
         default_layer {
             display-name = "Base";
